@@ -15,14 +15,14 @@ const store = new Vuex.Store({
 
     {
       id: "727027",
-      name: "Brown pants",
+      name: "Pantalon Marron",
       image:
       "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=45&h=45",
       price: 78 },
 
     {
       id: "727028",
-      name: "Red Sweatshirt",
+      name: "Sweatshirt Rouge",
       image:
       "https://images.unsplash.com/photo-1482703468513-9c19ac672ed4?auto=format&fit=crop&w=45&h=45",
       price: 109 }],
@@ -32,21 +32,21 @@ const store = new Vuex.Store({
     {
       id: "gls",
       name: "GLS",
-      desc: "GLS - Package delivered directly to the door",
+      desc: "GLS - Colis livré directement à la porte",
       price: "10",
       type: "private" },
 
     {
       id: "fedex",
       name: "FedEx",
-      desc: "FedEx - Package delivered directly to the door",
+      desc: "FedEx - Colis livré directement à la porte",
       price: "10",
       type: "private" },
 
     {
       id: "dhl",
       name: "DHL",
-      desc: "DHL - Package delivered directly to your company",
+      desc: "DHL - Colis livré directement à la porte",
       price: "12",
       type: "company" }],
 
@@ -136,7 +136,7 @@ const quantitySelect = {
   },
   template: `
     <select v-model="quantity">
-      <option value="" disabled>Quantity</option>
+      <option value="" disabled>Quantité</option>
       <option v-for="(n, index) in 10" :value="n">{{n}} pcs.</option>
     </select>
   `,

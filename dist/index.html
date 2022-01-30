@@ -29,8 +29,8 @@
       <div class="col s12 m6">
         <div class="card">
           <div class="card-content">
-            <p><b>produits in cart:</b> {{cartSummary.length}}</p>
-            <p><b>Shipping:</b> {{chosenShippingMethod.name}} - ${{shippingPrice}}</p>
+            <p><b>produits dans le panier:</b> {{cartSummary.length}}</p>
+            <p><b>Livraison:</b> {{chosenShippingMethod.name}} - ${{shippingPrice}}</p>
             <p><b>Total:</b> ${{basketTotal}}</p>
             <span class="small-text grey-text text-darken-2 m-top-10 ">Remplissez les informations ci-dessous et passez directement au paiement en cliquant sur le bouton.</span>
           </div>
@@ -51,12 +51,12 @@
                   <div class="input-field col s12 l6 m-top-15">
                     <input id="first_name" @blur="$v.name.$touch()" :class="{'invalid': $v.name.$error}" v-model="name" type="text" autocomplete="name">
                     <label for="first_name">Nom complet</label>
-                    <span v-if="$v.name.$error" class="helper-text" data-error="Please fill out full name">Helper text</span>
+                    <span v-if="$v.name.$error" class="helper-text" data-error="Veuillez renseigner votre nom complet">Texte d'aide</span>
 
                   </div>
                   <div class="input-field col s12 l6 m-top-15">
                     <input id="company" v-on:blur="setCompanyShipping" v-model="company" type="text" class="validate">
-                    <label for="company">Company (optional)</label>
+                    <label for="company">Entreprise (optionnel)</label>
                   </div>
                 </div>
                 <div class="row m-top-15">
