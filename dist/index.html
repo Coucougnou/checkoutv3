@@ -30,11 +30,11 @@
         <div class="card">
           <div class="card-content">
             <p><b>produits dans le panier:</b> {{cartSummary.length}}</p>
-            <p><b>Livraison:</b> {{chosenShippingMethod.name}} - ${{shippingPrice}}</p>
-            <p><b>Total:</b> ${{basketTotal}}</p>
+            <p><b>Livraison:</b> {{chosenShippingMethod.name}} - €{{shippingPrice}}</p>
+            <p><b>Total:</b> €{{basketTotal}}</p>
             <span class="small-text grey-text text-darken-2 m-top-10 ">Remplissez les informations ci-dessous et passez directement au paiement en cliquant sur le bouton.</span>
           </div>
-          <a v-on:click="scrollToBottom(); $v.name.$touch(); $v.address.$touch(); $v.email.$touch(); $v.phone.$touch();" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">arrow_downward
+          <a v-on:click="scrollToBottom(); €v.name.€touch(); $v.address.$touch(); $v.email.$touch(); $v.phone.$touch();" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">arrow_downward
 </i></a>
         </div>
 
@@ -63,20 +63,20 @@
                   <div class="input-field col s12 autocomplete-container">
                     <input class="js-autocomplete-input" id="dawa-autocomplete-input" @blur="$v.address.$touch()" :class="{'invalid': $v.address.$error}" v-model="addressInput" type="url" class="validate" autocomplete="false">
                     <label for="dawa-autocomplete-input">Adresse complète</label>
-                    <span v-if="$v.address.$error" class="helper-text" data-error="Please fill out full address">Texte d'aide</span>
+                    <span v-if="$v.address.$error" class="helper-text" data-error="Veuillez renseigner votre adresse">Texte d'aide</span>
                   </div>
                 </div>
                 <div class="row">
                   <div class="input-field col s12 l6 m-top-15">
                     <input @blur="$v.email.$touch()" :class="{'invalid': $v.email.$error}" id="email" v-model="email" type="text" class="validate" autocomplete="email">
                     <label for="email">Email</label>
-                    <span v-if="$v.email.$error" class="helper-text" data-error="Please fill out email">Texte d'aide</span>
+                    <span v-if="$v.email.$error" class="helper-text" data-error="Veuillez renseigner votre adresse email">Texte d'aide</span>
                   </div>
                   <div class="input-field col s12 l6 m-top-15">
                     <input @blur="$v.phone.$touch()" :class="{'invalid': $v.phone.$error}" id="phone" v-model="phone" type="text" class="validate" autocomplete="tel">
                     <label for="phone">Numéro de Téléphone
                     </label>
-                    <span v-if="$v.phone.$error" class="helper-text" data-error="Please fill out phone">Texte d'aide</span>
+                    <span v-if="$v.phone.$error" class="helper-text" data-error="Veuillez renseigner votre numéro de téléphone">Texte d'aide</span>
                   </div>
                 </div>
                 <label class="d-block m-top-15">
@@ -114,7 +114,7 @@
               <p class="p-top-10" v-for="(shippingMethod, index) in shippingMethods">
                 <label>
                   <input v-model="shipping" name="group1" :value="shippingMethod.id" type="radio" :id="shippingMethod.id" class="with-gap m-top-15" />
-                  <span>{{shippingMethod.desc}} - ${{shippingMethod.price}}</span>
+                  <span>{{shippingMethod.desc}} - €{{shippingMethod.price}}</span>
                 </label>
               </p>
             </form>
@@ -157,8 +157,8 @@
                         </select>
                         </div>
                         <div class="d-block input-field col m7">
-                          <span class="related__product-price">$119</span>
-                          <span class="related__product-price related__product-price--before grey-text text-darken-1">$179</span>
+                          <span class="related__product-price">€119</span>
+                          <span class="related__product-price related__product-price--before grey-text text-darken-1">€179</span>
                         </div>
                       </div>
                     </div>
@@ -180,8 +180,8 @@
                         </select>
                         </div>
                         <div class="d-block input-field col m7">
-                          <span class="related__product-price">$65</span>
-                          <span class="related__product-price related__product-price--before grey-text text-darken-1">$99</span>
+                          <span class="related__product-price">€65</span>
+                          <span class="related__product-price related__product-price--before grey-text text-darken-1">€99</span>
                         </div>
                       </div>
                     </div>
@@ -204,7 +204,7 @@
                         </div>
                         <div class="d-block input-field col m7">
                           <span class="related__product-price">€5</span>
-                          <span class="related__product-price related__product-price--before grey-text text-darken-1">$15</span>
+                          <span class="related__product-price related__product-price--before grey-text text-darken-1">€15</span>
                         </div>
                       </div>
                     </div>
@@ -226,8 +226,8 @@
                         </select>
                         </div>
                         <div class="d-block input-field col m7">
-                          <span class="related__product-price">$60</span>
-                          <span class="related__product-price related__product-price--before grey-text text-darken-1">$80</span>
+                          <span class="related__product-price">€60</span>
+                          <span class="related__product-price related__product-price--before grey-text text-darken-1">€80</span>
                         </div>
                       </div>
                     </div>
@@ -284,7 +284,7 @@
                     <quantity-select :product-id="product.id"></quantity-select>
                   </div>
                 </div>
-                <a href="#!" class="secondary-content"><i class="material-icons" v-on:click="deleteItem(product.id)">clear</i></a>
+                <a href="#!" class="secondary-content"><i class="material-icons" v-on:click="deleteItem(product.id)">vider</i></a>
               </li>
             </ul>
             <ul>
