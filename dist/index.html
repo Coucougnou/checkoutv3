@@ -17,7 +17,7 @@
 
   <nav class="indigo darken-4">
     <div class="nav-wrapper container">
-      <a href="#" class="brand-logo">Axepta Checkout Demo<i class="material-icons">shopping_cart</i></a>
+      <a href="#" class="brand-logo">Axepta Checkout Demo Page<i class="material-icons">shopping_cart</i></a>
     </div>
   </nav>
       <div class="progress-container hide-on-med-and-up">
@@ -34,7 +34,7 @@
             <p><b>Total:</b> €{{basketTotal}}</p>
             <span class="small-text grey-text text-darken-2 m-top-10 ">Remplissez les informations ci-dessous et passez directement au paiement en cliquant sur le bouton.</span>
           </div>
-          <a v-on:click="scrollToBottom(); €v.name.€touch(); $v.address.$touch(); $v.email.$touch(); $v.phone.$touch();" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">arrow_downward
+          <a v-on:click="scrollToBottom(); $v.name.€touch(); $v.address.$touch(); $v.email.$touch(); $v.phone.$touch();" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">arrow_downward
 </i></a>
         </div>
 
@@ -272,11 +272,11 @@
                 <div class="row">
                   <div class="col s12 l4">
                     <span class="title">{{ product.name }}</span>
-                    <p>${{ product.price }}</p>
+                    <p>€{{ product.price }}</p>
                   </div>
                   <div class="input-field col s6 l2">
                     <select>
-                        <option value="" disabled>Size</option>
+                        <option value="" disabled>Taille</option>
                         <option v-for="(size, index) in sizes" :value="size" :selected="index == 2 ? 'selected' : ''">{{size}}</option>
                       </select>
                   </div>
