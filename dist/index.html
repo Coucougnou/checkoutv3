@@ -32,7 +32,7 @@
             <p><b>Items in cart:</b> {{cartSummary.length}}</p>
             <p><b>Shipping:</b> {{chosenShippingMethod.name}} - ${{shippingPrice}}</p>
             <p><b>Total:</b> ${{basketTotal}}</p>
-            <span class="small-text grey-text text-darken-2 m-top-10 ">Fill out the information below and go directly to payment by clicking the button.</span>
+            <span class="small-text grey-text text-darken-2 m-top-10 ">Remplissez les informations ci-dessous et passez directement au paiement en cliquant sur le bouton.</span>
           </div>
           <a v-on:click="scrollToBottom(); $v.name.$touch(); $v.address.$touch(); $v.email.$touch(); $v.phone.$touch();" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">arrow_downward
 </i></a>
@@ -50,7 +50,7 @@
                 <div class="row">
                   <div class="input-field col s12 l6 m-top-15">
                     <input id="first_name" @blur="$v.name.$touch()" :class="{'invalid': $v.name.$error}" v-model="name" type="text" autocomplete="name">
-                    <label for="first_name">Full name</label>
+                    <label for="first_name">Nom complet</label>
                     <span v-if="$v.name.$error" class="helper-text" data-error="Please fill out full name">Helper text</span>
 
                   </div>
@@ -62,43 +62,43 @@
                 <div class="row m-top-15">
                   <div class="input-field col s12 autocomplete-container">
                     <input class="js-autocomplete-input" id="dawa-autocomplete-input" @blur="$v.address.$touch()" :class="{'invalid': $v.address.$error}" v-model="addressInput" type="url" class="validate" autocomplete="false">
-                    <label for="dawa-autocomplete-input">Full address</label>
-                    <span v-if="$v.address.$error" class="helper-text" data-error="Please fill out full address">Helper text</span>
+                    <label for="dawa-autocomplete-input">Adresse complète</label>
+                    <span v-if="$v.address.$error" class="helper-text" data-error="Please fill out full address">Texte d'aide</span>
                   </div>
                 </div>
                 <div class="row">
                   <div class="input-field col s12 l6 m-top-15">
                     <input @blur="$v.email.$touch()" :class="{'invalid': $v.email.$error}" id="email" v-model="email" type="text" class="validate" autocomplete="email">
                     <label for="email">Email</label>
-                    <span v-if="$v.email.$error" class="helper-text" data-error="Please fill out email">Helper text</span>
+                    <span v-if="$v.email.$error" class="helper-text" data-error="Please fill out email">Texte d'aide</span>
                   </div>
                   <div class="input-field col s12 l6 m-top-15">
                     <input @blur="$v.phone.$touch()" :class="{'invalid': $v.phone.$error}" id="phone" v-model="phone" type="text" class="validate" autocomplete="tel">
-                    <label for="phone">Phone
+                    <label for="phone">Numéro de Téléphone
                     </label>
-                    <span v-if="$v.phone.$error" class="helper-text" data-error="Please fill out phone">Helper text</span>
+                    <span v-if="$v.phone.$error" class="helper-text" data-error="Please fill out phone">Texte d'aide</span>
                   </div>
                 </div>
                 <label class="d-block m-top-15">
                   <input type="checkbox" v-model="showAlternative" class="filled-in" />
-                  <span>Choose alternative delivery</span>
+                  <span>Choisissez une livraison alternative</span>
                 </label>
 
                 <div v-if="showAlternative" class="m-top-15">
                   <div class="row m-top-15" v-if="showAlternative">
                     <div class="input-field col s12 l6">
                       <input id="del_first_name" v-model="delName" type="text" class="validate">
-                      <label for="del_first_name">Full name</label>
+                      <label for="del_first_name">Nom complet</label>
                     </div>
                     <div class="input-field col s12 l6">
                       <input id="del_company" v-model="delCompany" type="text" class="validate">
-                      <label for="del_company">Company (optional)</label>
+                      <label for="del_company">Société (optionnel)</label>
                     </div>
                   </div>
                   <div class="row m-top-15">
                     <div class="input-field col s12 autocomplete-container">
                       <input class="autocomplete" id="del_address" class="validate" v-model="delAddressInput" type="text" class="validate" autocomplete="shipping street-address">
-                      <label for="del_address">Full address</label>
+                      <label for="del_address">Adresse complète</label>
                     </div>
                   </div>
                 </div>
@@ -108,8 +108,8 @@
         </div>
         <div class="card" id="step-2" v-cloak>
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4"><b>Shipping</b></span>
-            <p>Pleasse choose your desired shipping provider.</p>
+            <span class="card-title activator grey-text text-darken-4"><b>Expédition</b></span>
+            <p>Veuillez choisir votre fournisseur d'expédition souhaité.</p>
             <form action="#">
               <p class="p-top-10" v-for="(shippingMethod, index) in shippingMethods">
                 <label>
@@ -118,18 +118,18 @@
                 </label>
               </p>
             </form>
-            <span class="card-title activator grey-text text-darken-4 m-top-15 p-top-10"><b>Voucher</b></span>
+            <span class="card-title activator grey-text text-darken-4 m-top-15 p-top-10"><b>Code Promo</b></span>
             <label v-if="!showVoucher" class="d-block m-top-15">
                   <input type="checkbox" v-model="showVoucher" class="filled-in" />
-                  <span>I have a voucher code</span>
+                  <span>J'ai un code promo</span>
                 </label>
             <div v-if="showVoucher" class="row m-top-10 p-top-10">
               <div class="input-field col s12 l6">
                 <input id="voucher" type="text" class="validate">
-                <label for="voucher">Voucher</label>
+                <label for="voucher">Code Promo</label>
               </div>
               <div class="col s12 l6">
-                <a class="waves-effect waves-light btn indigo darken-4 m-top-10">Add voucher</a>
+                <a class="waves-effect waves-light btn indigo darken-4 m-top-10">Ajouter un code promo</a>
               </div>
 
             </div>
@@ -137,7 +137,7 @@
         </div>
         <div class="card" id="step-3" v-cloak>
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4"><b>Maybe you could also be interested in...</b></span>
+            <span class="card-title activator grey-text text-darken-4"><b>Peut-être pourriez-vous également être intéressé par...</b></span>
             <div class="row m-top-15">
               <swiper ref="awesomeSwiper" :options="swiperOptions">
                 <!-- slides -->
@@ -152,7 +152,7 @@
                       <div class="row">
                         <div class="d-block input-field col m5">
                           <select>
-                          <option value="" disabled>Size</option>
+                          <option value="" disabled>Taille</option>
                           <option v-if="index > 3" v-for="(n, index) in 14" :value="n">US {{n}}</option>
                         </select>
                         </div>
@@ -175,7 +175,7 @@
                       <div class="row">
                         <div class="d-block input-field col m5">
                           <select>
-                          <option value="" disabled>Size</option>
+                          <option value="" disabled>Taille</option>
                           <option v-for="(size, index) in sizes" :value="size">{{size}}</option>
                         </select>
                         </div>
@@ -194,11 +194,11 @@
                       <a class="btn-floating halfway-fab waves-effect waves-light indigo darken-4"><i class="material-icons">shopping_basket</i></a>
                     </div>
                     <div class="card-content">
-                      <span class="flow-text">Unsplash socks</span>
+                      <span class="flow-text">Unsplash chaussette</span>
                       <div class="row">
                         <div class="d-block input-field col m5">
                           <select>
-                          <option value="" disabled>Size</option>
+                          <option value="" disabled>Taille</option>
                           <option v-if="index > 3" v-for="(n, index) in 14" :value="n">US {{n}}</option>
                         </select>
                         </div>
@@ -221,7 +221,7 @@
                       <div class="row">
                         <div class="d-block input-field col m5">
                           <select>
-                          <option value="" disabled>Size</option>
+                          <option value="" disabled>Taille</option>
                           <option v-if="index > 3" v-for="(n, index) in 14" :value="n">US {{n}}</option>
                         </select>
                         </div>
@@ -245,10 +245,10 @@
       <div class="col s12 m6">
         <div class="card" id="step-4" v-cloak>
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4"><b>Order summary</b></span>
+            <span class="card-title activator grey-text text-darken-4"><b>Récapitulatif de la commande</b></span>
             <div class="row info">
               <div class="col s12 m6">
-                <p><b>Billing address:</b></p>
+                <p><b>Adresse de facturation:</b></p>
                 <p>{{ name }}</p>
                 <p>{{ company }}</p>
                 <p>{{ addressComputed }}</p>
@@ -257,14 +257,14 @@
                 <p>{{ phone }}</p>
               </div>
               <div class="col s12 m6" v-if="showAlternative">
-                <p><b>Delivery address:</b></p>
+                <p><b>Adresse de livraison:</b></p>
                 <p>{{ delName }}</p>
                 <p>{{ delCompany }}</p>
                 <p>{{ delAddressComputed }}</p>
                 <p>{{ delCityComputed }}</p>
               </div>
             </div>
-            <span class="card-title activator grey-text text-darken-4 m-top-15"><b>Your order</b></span>
+            <span class="card-title activator grey-text text-darken-4 m-top-15"><b>Votre Commande</b></span>
             <span><b>{{ products.length }} items</b></span>
             <ul class="collection">
               <li class="collection-item avatar" ref="item-1" v-for="(product, index) in products">
@@ -289,7 +289,7 @@
             </ul>
             <ul>
               <li v-if="shipping">
-                <span><b>Shipping</b> <i>{{chosenShippingMethod.desc}}</i></span>
+                <span><b>Expédition</b> <i>{{chosenShippingMethod.desc}}</i></span>
                 <span class="right">${{chosenShippingMethod.price}}</span>
               </li>
               <li v-if="taxTotal">
@@ -303,17 +303,17 @@
             <span class="right"><b>${{basketTotal}}</b></span>
           </div>
           <div class="card-action">
-            <span class="card-title activator grey-text text-darken-4"><b>Payment</b></span>
-            <p class="payment-info">Please choose your desired payment method. Credit card option will redirect you to the payment gateway.</p>
+            <span class="card-title activator grey-text text-darken-4"><b>Paiement</b></span>
+            <p class="payment-info">Veuillez choisir le mode de paiement souhaité. L'option de carte de crédit vous redirigera vers la passerelle de paiement.</p>
             <p>
               <label>
                   <input type="checkbox"  class="filled-in" />
-                  <span>Please sign me up for the newsletter</span>
+                  <span>Merci de m'inscrire à la newsletter</span>
               </label></p>
             <p>
               <label>
                   <input type="checkbox" v-model="consent" class="filled-in" />
-                  <span>I hereby confirm that the information that I have provided is correct and that I accept the <a href="#" class="indigo-text text-darken-4">Conditions General de Vente</a></span>
+                  <span>Je confirme par la présente que les informations que j'ai fournies sont correctes et que j'accepte les <a href="#" class="indigo-text text-darken-4">Conditions General de Vente</a></span>
               </label></p>
             
             <a ref="link" v-on:click="goToPayment($event); $v.$touch();" href="https://mobilepay.dk/da-dk/pages/betal.aspx?phone=004512345678&amount=199" class="mobilepay">
