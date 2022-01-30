@@ -29,7 +29,7 @@
       <div class="col s12 m6">
         <div class="card">
           <div class="card-content">
-            <p><b>Items in cart:</b> {{cartSummary.length}}</p>
+            <p><b>produits in cart:</b> {{cartSummary.length}}</p>
             <p><b>Shipping:</b> {{chosenShippingMethod.name}} - ${{shippingPrice}}</p>
             <p><b>Total:</b> ${{basketTotal}}</p>
             <span class="small-text grey-text text-darken-2 m-top-10 ">Remplissez les informations ci-dessous et passez directement au paiement en cliquant sur le bouton.</span>
@@ -194,7 +194,7 @@
                       <a class="btn-floating halfway-fab waves-effect waves-light indigo darken-4"><i class="material-icons">shopping_basket</i></a>
                     </div>
                     <div class="card-content">
-                      <span class="flow-text">Unsplash chaussette</span>
+                      <span class="flow-text">Lot de Chaussettes Unsplash </span>
                       <div class="row">
                         <div class="d-block input-field col m5">
                           <select>
@@ -203,7 +203,7 @@
                         </select>
                         </div>
                         <div class="d-block input-field col m7">
-                          <span class="related__product-price">$5</span>
+                          <span class="related__product-price">€5</span>
                           <span class="related__product-price related__product-price--before grey-text text-darken-1">$15</span>
                         </div>
                       </div>
@@ -217,7 +217,7 @@
                       <a class="btn-floating halfway-fab waves-effect waves-light indigo darken-4"><i class="material-icons">shopping_basket</i></a>
                     </div>
                     <div class="card-content">
-                      <span class="flow-text">All Stars</span>
+                      <span class="flow-text">Converse All Stars</span>
                       <div class="row">
                         <div class="d-block input-field col m5">
                           <select>
@@ -265,7 +265,7 @@
               </div>
             </div>
             <span class="card-title activator grey-text text-darken-4 m-top-15"><b>Votre Commande</b></span>
-            <span><b>{{ products.length }} items</b></span>
+            <span><b>{{ products.length }} produits</b></span>
             <ul class="collection">
               <li class="collection-item avatar" ref="item-1" v-for="(product, index) in products">
                 <img :src="product.image" alt="" class="circle">
@@ -293,7 +293,7 @@
                 <span class="right">${{chosenShippingMethod.price}}</span>
               </li>
               <li v-if="taxTotal">
-                <span><b>TAX</b></span>
+                <span><b>TAXE</b></span>
                 <span class="right">${{taxTotal}}</span>
               </li>
             </ul>
@@ -319,7 +319,7 @@
             <a ref="link" v-on:click="goToPayment($event); $v.$touch();" href="https://mobilepay.dk/da-dk/pages/betal.aspx?phone=004512345678&amount=199" class="mobilepay">
               <img src="https://cdn.mobilepay.dk/res-website/img/buttons/paywith/dk/mpblue/medium.svg" alt="" class="src">
             </a>
-            <a ref="link" v-on:click="goToPayment($event); $v.$touch();" href="https://paymentpage.axepta.bnpparibas/payssl.aspx?MerchantID=BNP_DEMO_AXEPTA&Len=289&DATA=" class="waves-effect waves-light btn-credit-card blue-grey"><i class="material-icons left">credit_card</i>Pay with Credit Card</a>
+            <a ref="link" v-on:click="goToPayment($event); $v.$touch();" href="https://paymentpage.axepta.bnpparibas/payssl.aspx?MerchantID=BNP_DEMO_AXEPTA&Len=289&DATA=" class="waves-effect waves-light btn-credit-card blue-grey"><i class="material-icons left">credit_card</i>Payer avec ma Carte de Crédit</a>
           </div>
 
         </div>
