@@ -290,17 +290,17 @@
             <ul>
               <li v-if="shipping">
                 <span><b>Expédition</b> <i>{{chosenShippingMethod.desc}}</i></span>
-                <span class="right">${{chosenShippingMethod.price}}</span>
+                <span class="right">€{{chosenShippingMethod.price}}</span>
               </li>
               <li v-if="taxTotal">
                 <span><b>TAXE</b></span>
-                <span class="right">${{taxTotal}}</span>
+                <span class="right">€{{taxTotal}}</span>
               </li>
             </ul>
           </div>
           <div class="card-action" v-if="basketTotal">
             <span><b>Total</b></span>
-            <span class="right"><b>${{basketTotal}}</b></span>
+            <span class="right"><b>€{{basketTotal}}</b></span>
           </div>
           <div class="card-action">
             <span class="card-title activator grey-text text-darken-4"><b>Paiement</b></span>
