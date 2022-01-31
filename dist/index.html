@@ -313,12 +313,9 @@
             <p>
               <label>
                   <input type="checkbox" v-model="consent" class="filled-in" />
-                  <span>Je confirme par la présente que les informations que j'ai fournies sont correctes et que j'accepte les <a href="#" class="indigo-text text-darken-4">Conditions General de Vente</a></span>
+                  <span>Je confirme par la présente que les informations que je fournis sont correctes et que j'accepte les <a href="#" class="indigo-text text-darken-4">Conditions General de Vente</a></span>
               </label></p>
             
-            <a ref="link" v-on:click="goToPayment($event); $v.$touch();" href="https://mobilepay.dk/da-dk/pages/betal.aspx?phone=004512345678&amount=199" class="mobilepay">
-              <img src="https://cdn.mobilepay.dk/res-website/img/buttons/paywith/dk/mpblue/medium.svg" alt="" class="src">
-            </a>
             <a ref="link" v-on:click="goToPayment($event); $v.$touch();" href="https://paymentpage.axepta.bnpparibas/payssl.aspx?MerchantID=BNP_DEMO_AXEPTA&Len=289&DATA=550a705ffb8fb2d59f72a116a55b26ef97d92d6ebec45ea10efe79b05d93f6fd6a69e8f810509d7e754899153e459f05cfd2c9bd9e71f92acda33e453f329a641328b32411b5c08ded80711c13d64e01d2cbae26a884f8c8781db17f31434fe34032ec5ef961dfb53006add8abc7f9cfa39d582962f3a70af105eb1f2240376e358d7cf8a7dadfef6afeac3bf0f043f578f5040995a7b29ca23fbcc0f84f5e416fe1ef60c3ff58028b3aa017b2fb50715fc3ef42b3947cc89f2639f61f6dbd8fea1f0b17716115676b2762ea14f0ca8d6fe1ef60c3ff58028b3aa017b2fb50715fc3ef42b3947cc86f80ef28614f1f739345550e4a0fc83bc7ca605f8477fcb5fa93da00daa0bddf9faace1829eeea32c8ffd87cffaf85930479d79b121d2662172cd81022e35232777bedb997aeb1deba02dc2fc4af5297802ace7338757a9058e220fd1c0abb8b2f3d8309b9d7375cae9897dc2aeda201" class="waves-effect waves-light btn-credit-card blue-grey"><i class="material-icons left">credit_card</i>Payer avec ma Carte de Crédit</a>
           </div>
 
