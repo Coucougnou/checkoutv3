@@ -29,7 +29,7 @@
       <div class="col s12 m6">
         <div class="card">
           <div class="card-content">
-            <p><b>produits dans le panier:</b> {{cartSummary.length}}</p>
+            <p><b>Produits dans le panier:</b> {{cartSummary.length}}</p>
             <p><b>Livraison:</b> {{chosenShippingMethod.name}} - €{{shippingPrice}}</p>
             <p><b>Total:</b> €{{basketTotal}}</p>
             <span class="small-text grey-text text-darken-2 m-top-10 ">Remplissez les informations ci-dessous et passez directement au paiement en cliquant sur le bouton.</span>
@@ -61,9 +61,7 @@
                 </div>
                 <div class="row m-top-15">
                   <div class="input-field col s12 autocomplete-container">
-                    <input class="js-autocomplete-input" id="dawa-autocomplete-input" @blur="$v.address.$touch()" :class="{'invalid': $v.address.$error}" v-model="addressInput" type="url" class="validate" autocomplete="false">
-                    <label for="dawa-autocomplete-input">Adresse complète</label>
-                    <span v-if="$v.address.$error" class="helper-text" data-error="Veuillez renseigner votre adresse">Texte d'aide</span>
+                   <p>Adresse : 12 Boulevard de la Liberté, Paris 75012</p>
                   </div>
                 </div>
                 <div class="row">
@@ -96,8 +94,8 @@
                     </div>
                   </div>
                   <div class="row m-top-15">
-                    <div class="input-field col s12 autocomplete-container">
-                      <input class="autocomplete" id="del_address" class="validate" v-model="delAddressInput" type="text" class="validate" autocomplete="shipping street-address">
+                    <div class="input-field col s12">
+                      <input >
                       <label for="del_address">Adresse complète</label>
                     </div>
                   </div>
@@ -251,8 +249,8 @@
                 <p><b>Adresse de facturation:</b></p>
                 <p>{{ name }}</p>
                 <p>{{ company }}</p>
-                <p>{{ addressComputed }}</p>
-                <p>{{ cityComputed }}</p>
+                <p> 12 Boulevard de la Liberté</p>
+                <p>Paris 75012</p>
                 <p>{{ email }}</p>
                 <p>{{ phone }}</p>
               </div>
@@ -260,8 +258,8 @@
                 <p><b>Adresse de livraison:</b></p>
                 <p>{{ delName }}</p>
                 <p>{{ delCompany }}</p>
-                <p>{{ delAddressComputed }}</p>
-                <p>{{ delCityComputed }}</p>
+                <p>12 Boulevard de la Liberté</p>
+                <p>Paris 75012</p>
               </div>
             </div>
             <span class="card-title activator grey-text text-darken-4 m-top-15"><b>Votre Commande</b></span>
@@ -313,10 +311,10 @@
             <p>
               <label>
                   <input type="checkbox" v-model="consent" class="filled-in" />
-                  <span>Je confirme par la présente que les informations que je fournis sont correctes et que j'accepte les <a href="#" class="indigo-text text-darken-4">Conditions General de Vente</a></span>
+                  <span>Je confirme par la présente que les informations que je fourni sont correctes et que j'accepte les <a href="#" class="indigo-text text-darken-4">Conditions General de Vente</a></span>
               </label></p>
             
-            <a ref="link" v-on:click="goToPayment($event); $v.$touch();" href="https://paymentpage.axepta.bnpparibas/payssl.aspx?MerchantID=BNP_DEMO_AXEPTA&Len=289&DATA=550a705ffb8fb2d59f72a116a55b26ef97d92d6ebec45ea10efe79b05d93f6fd6a69e8f810509d7e754899153e459f05cfd2c9bd9e71f92acda33e453f329a641328b32411b5c08ded80711c13d64e01d2cbae26a884f8c8781db17f31434fe34032ec5ef961dfb53006add8abc7f9cfa39d582962f3a70af105eb1f2240376e358d7cf8a7dadfef6afeac3bf0f043f578f5040995a7b29ca23fbcc0f84f5e416fe1ef60c3ff58028b3aa017b2fb50715fc3ef42b3947cc89f2639f61f6dbd8fea1f0b17716115676b2762ea14f0ca8d6fe1ef60c3ff58028b3aa017b2fb50715fc3ef42b3947cc86f80ef28614f1f739345550e4a0fc83bc7ca605f8477fcb5fa93da00daa0bddf9faace1829eeea32c8ffd87cffaf85930479d79b121d2662172cd81022e35232777bedb997aeb1deba02dc2fc4af5297802ace7338757a9058e220fd1c0abb8b2f3d8309b9d7375cae9897dc2aeda201" class="waves-effect waves-light btn-credit-card blue-grey"><i class="material-icons left">credit_card</i>Payer avec ma Carte de Crédit</a>
+            <a ref="link" v-on:click="goToPayment($event); $v.$touch();" href="https://paymentpage.axepta.bnpparibas/payssl.aspx?MerchantID=BNP_DEMO_AXEPTA&Data=3791360369340bcf71f3cd470e3ee5678187cd277ce6601480152d2013c2c6c1ffcbe30b661a75abcc36a735ed89d25dbc18ef870cbd77b17d81e6a25445ebdfb6856ef84c1bd8ba7a92ac7693b340d6b64ac8b3fcddbe6020e43be3d20d04e5cf97312db5defe5434d00676c704accfd75797d864e4e965743f63799d5c98f572426d70d1f4a6fa61a1b5d5e3c7e0f2a8f39ee384a77eb433c09666779cad61b7ced63dd42fbb5b9ea9941f88d07e3e2aca5d6b4034c314aaaee707015230447c2a6690a5594df5ff44b172f976146582573b5d831677904eea921e20c76d90db30f546a7280815b83da58ab9a7e5568e015b7611753594b9ffba6bd77538dba62f03d1f9597bee4eea921e20c76d90db30f546a728081500e6c888d5c0398e7259fc3942ae5e2b9868c0b7bae7758137014f9f259e076eba8ad2743e5b02acbe1fab198a65245c11390ebc0b6ce8be0da9f3bd48fe3a309ff150e050d5c91ce548de3c7cbae0c321c746892397f554113c06223676259b3300ad01e268cf37f746983b1f1b7692f01f7dfd2909f64c49b84f4d7beaeabfa7260650c6ce4ba8e1417a13f12c49ef592fff413358cbc0a736497735d6f8020751f1aad40feff2c44b71247bdad8af2e802b29d14ab04ec004950fdd40c413a5a52ae8a2a3fa48f5ad1cc0313ddbb7&Len=484&Language=fr&URLBack=https%3A%2F%2Faxeptacheckout.netlify.app%2F&PayType=0" class="waves-effect waves-light btn-credit-card blue-grey"><i class="material-icons left">credit_card</i>Payer avec ma Carte de Crédit</a>
           </div>
 
         </div>

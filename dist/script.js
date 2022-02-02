@@ -251,7 +251,7 @@ new Vue({
       required },
 
     address: {
-      required },
+       },
 
     email: {
       required,
